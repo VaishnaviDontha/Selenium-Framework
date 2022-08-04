@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
 import driver.Driver;
+import driver.DriverManager;
 
 public final class HomePageTests extends BaseTest {
 
@@ -14,8 +15,8 @@ public final class HomePageTests extends BaseTest {
     @Test
     public void Test() {
 
-        // Driver.initDriver();
-        Driver.driver.findElement(By.name("q")).sendKeys("Rest Assured Automation", Keys.ENTER);
+        Driver.initDriver();
+        DriverManager.getDriver().findElement(By.name("q")).sendKeys("Rest Assured Automation", Keys.ENTER);
 
     }
 
