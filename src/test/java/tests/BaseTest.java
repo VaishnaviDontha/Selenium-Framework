@@ -1,5 +1,7 @@
 package tests;
 
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -11,14 +13,14 @@ public class BaseTest {
     }
 
     @BeforeMethod
-    public void setUp() {
+    protected void setUp() throws Exception {
 
         Driver.initDriver();
 
     }
 
     @AfterMethod
-    public void tearDown() {
+    protected void tearDown() {
 
         Driver.quitDriver();
 
