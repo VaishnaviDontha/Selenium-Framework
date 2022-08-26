@@ -49,7 +49,7 @@ public final class HomePageTests extends BaseTest {
             }
         }
 
-        assertTrue(isElementPresent, "Element not found");
+        Assert.assertTrue(isElementPresent, "Element not found");
 
     }
 
