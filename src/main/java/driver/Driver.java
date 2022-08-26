@@ -22,7 +22,8 @@ public final class Driver {
             WebDriver driver = new ChromeDriver();
 
             DriverManager.setDriver(driver);
-            DriverManager.getDriver().get(ReadingPropertyFile.getValue(ConfigProperties.URL));
+            // DriverManager.getDriver().get(ReadingPropertyFile.getValue(ConfigProperties.URL));
+            DriverManager.getDriver().get("https://opensource-demo.orangehrmlive.com/");
         }
 
     }
