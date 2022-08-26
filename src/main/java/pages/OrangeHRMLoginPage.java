@@ -6,9 +6,9 @@ import enums.WaitStrategy;
 
 public final class OrangeHRMLoginPage extends BasePage{
 
-    private final By textboxUsername = By.id("txtUsername");
-    private final By textboxPassword = By.xpath("//input[@id = 'txtPassword' and @type='password']");
-    private final By buttonLogin = By.id("btnLogin");
+    private final By textboxUsername = By.name("username");
+    private final By textboxPassword = By.xpath("//input[@name = 'password' and @type='password']");
+    private final By buttonLogin = By.xpath("//button[@type='submit']");
 
     public OrangeHRMLoginPage enterUserName(String username) {
 
