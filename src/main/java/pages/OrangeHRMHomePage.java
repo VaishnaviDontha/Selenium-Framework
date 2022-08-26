@@ -6,8 +6,8 @@ import enums.WaitStrategy;
 
 public final class OrangeHRMHomePage extends BasePage {
 
-    private final By linkWelcome = By.xpath("//a[@id='welcome']");
-    private final By linkLogout = By.xpath("//div[@id = 'welcome-menu']/ul/li[3]/a");
+    private final By linkWelcome = By.xpath("//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']");
+    private final By linkLogout = By.xpath("//ul[@class='oxd-dropdown-menu']/li[4]/a");
 
     public OrangeHRMHomePage clickWelcome() {
 
