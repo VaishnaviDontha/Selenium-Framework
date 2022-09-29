@@ -35,59 +35,81 @@ public final class OrangeHRMTests extends BaseTest {
     public Object[][] loginTestData() {
 
         return new Object[][] {
-                { "Admin", "admin123" },
-                { "Admin", "admin12" },
-                { "Admin", "admin13" },
-                { "Admin", "admin23" }
+                { "Admin", "admin123" }
+                // { "Admin", "admin12" },
+                // { "Admin", "admin13" },
+                // { "Admin", "admin23" }
 
         };
 
     }
 
-    // @Test(dataProvider = "loginTestDataViaExcel")
-    // public void loginTestDataViaExcelTest(String uname, String pwd) {
 
-    // OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
+    @Test(dataProvider = "loginTestData")
+    public void newTest(String username, String password) throws Exception {
 
-    // String title = ohlp.enterUserName(uname)
-    // .enterPassword(pwd)
-    // .clickLogin()
-    // .clickWelcome()
-    // .clickLogout()
-    // .getTitle();
+        OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
 
-    // Assertions.assertThat(title).isEqualTo("OrangeHRM");
+        String title = ohlp.enterUserName(username)
+                .enterPassword(password)
+                .clickLogin()
+                .clickWelcome()
+                .clickLogout()
+                .getTitle();
 
-    // }
+        Assertions.assertThat(title).isEqualTo("OrangeHRM");
+        
+    }
+   
+    
+    /*
+     * Integration of Excel with DataProvider
+    @Test(dataProvider = "loginTestDataViaExcel")
+    public void loginTestDataViaExcelTest(String uname, String pwd) {
 
-    // @DataProvider()
-    // public Object[][] loginTestDataViaExcel() throws IOException {
+    OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
 
-    // FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+
-    // "/src/main/java/testData/testdata.xlsx");
-    // XSSFWorkbook workbook = new XSSFWorkbook(fis);
-    // XSSFSheet sheet = workbook.getSheet("Sheet1");
+    String title = ohlp.enterUserName(uname)
+    .enterPassword(pwd)
+    .clickLogin()
+    .clickWelcome()
+    .clickLogout()
+    .getTitle();
 
-    // int row = sheet.getLastRowNum();
-    // int col = sheet.getRow(0).getLastCellNum();
+    Assertions.assertThat(title).isEqualTo("OrangeHRM");
 
-    // System.out.println("Row :" + row + "Column :" + col );
+    }
 
-    // Object[][] data = new Object[row][col];
+    @DataProvider()
+    public Object[][] loginTestDataViaExcel() throws IOException {
 
-    // for (int i = 1; i <= row; i++) {
+    FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+
+    "/src/main/java/testData/testdata.xlsx");
+    XSSFWorkbook workbook = new XSSFWorkbook(fis);
+    XSSFSheet sheet = workbook.getSheet("Sheet1");
 
-    // for (int j = 0; j < data.length; j++) {
+    int row = sheet.getLastRowNum();
+    int col = sheet.getRow(0).getLastCellNum();
 
-    // data[i-1][j] = sheet.getRow(i).getCell(j).getStringCellValue();
+    System.out.println("Row :" + row + "Column :" + col );
 
-    // }
+    Object[][] data = new Object[row][col];
 
-    // }
+    for (int i = 1; i <= row; i++) {
 
-    // workbook.close();
-    // return data;
+    for (int j = 0; j < data.length; j++) {
 
-    // }
+    data[i-1][j] = sheet.getRow(i).getCell(j).getStringCellValue();
+
+    }
+
+    }
+
+    workbook.close();
+    return data;
+
+    }
+     */
+    
 
 }

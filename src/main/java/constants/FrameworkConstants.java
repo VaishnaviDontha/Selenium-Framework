@@ -14,8 +14,10 @@ public final class FrameworkConstants {
     private static final String FIREFOXDRIVERPATH = RESOURCESPATH + "/executables/geckodriver";
     private static final String CONFIGFILEPATH = RESOURCESPATH + "/config/config.properties"; 
     private static final int EXPLICITWAIT = 10; 
+    private static final String EXCELPATH = RESOURCESPATH + "/excel/testdata.xlsx";
     private static final String EXTENTREPORTPATH = System.getProperty("user.dir")+"/extent-test-output/";
     private static String extentReportFilePath = "";
+    
 
     public static String getChromeDriverPath() {
         return CHROMEDRIVERPATH;
@@ -51,6 +53,10 @@ public final class FrameworkConstants {
         else{
         return EXTENTREPORTPATH+"/index.html";
         }
+    }
+
+    public static String getExcelpath() {
+        return EXCELPATH;
     }
 
 
