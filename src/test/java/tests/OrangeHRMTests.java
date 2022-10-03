@@ -1,10 +1,13 @@
 package tests;
 
+import java.util.Map;
+
 import org.assertj.core.api.Assertions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.OrangeHRMLoginPage;
+import utilities.DataProviderUtils;
 
 public final class OrangeHRMTests extends BaseTest {
 
@@ -12,16 +15,16 @@ public final class OrangeHRMTests extends BaseTest {
 
     }
 
-    @Test(dataProvider = "loginTestData")
-    public void loginLogoutTests(String username, String password) throws Exception {
+    @Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
+    public void loginLogoutTests(Map<String,String> data) throws Exception {
 
         // Reporting.createTest("loginlogouttests"); moving this to Base Test as this
         // doesn't define any test data
 
         OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
 
-        String title = ohlp.enterUserName(username)
-                .enterPassword(password)
+        String title = ohlp.enterUserName(data.get("username"))
+                .enterPassword(data.get("password"))
                 .clickLogin()
                 .clickWelcome()
                 .clickLogout()
