@@ -1,6 +1,6 @@
 package tests;
 
-import java.lang.reflect.Method;
+import java.util.Map;
 
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -14,19 +14,22 @@ public class BaseTest {
     protected BaseTest() {
     }
 
-    // @AfterSuite
-    // public void afterSuite() throws IOException {
-    // // Reporting.flushReports();
+    // @SuppressWarnings("unchecked")
+    // @BeforeMethod
+    // protected void setUp(Object[] data) throws Exception {
+
+    //     Map<String, String> map = (Map<String, String>) data[0];
+    //     Driver.initDriver(map.get("browser"));
 
     // }
 
+    @SuppressWarnings("unchecked")
     @BeforeMethod
-    protected void setUp(Method m) throws Exception {
+    protected void setUp(Object[] data) throws Exception {
 
-        // Reporting.createTest(m.getName()); // retreiving method name via
-        // java.lang.reflect
-        Driver.initDriver();
-
+        Map<String,String> map = (Map<String,String>)data[0];
+        Driver.initDriver(map.get("browser"));
+        
     }
 
     @AfterMethod
