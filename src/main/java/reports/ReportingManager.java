@@ -8,7 +8,7 @@ public class ReportingManager {
 
     private static ThreadLocal<ExtentTest> extenttest = new ThreadLocal<>();
 
-    static ExtentTest getExtenttest() {
+    public static ExtentTest getExtenttest() {
         return extenttest.get();
     }
 
