@@ -18,7 +18,7 @@ public final class ExcelUtils {
     private ExcelUtils() {
     }
 
-    public static List<Map<String, String>> getTestDetails() {
+    public static List<Map<String, String>> getTestDetails(String sheetname) {
 
         FileInputStream fis = null;
         List<Map<String, String>> list = null;
@@ -27,7 +27,7 @@ public final class ExcelUtils {
             fis = new FileInputStream(FrameworkConstants.getExcelpath());
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
-            XSSFSheet sheet = workbook.getSheet("Sheet1");
+            XSSFSheet sheet = workbook.getSheet(sheetname);
 
             Map<String, String> dataMap = null;
             list = new ArrayList<>();
@@ -36,7 +36,7 @@ public final class ExcelUtils {
             int colnum = sheet.getRow(0).getLastCellNum();
 
             /*
-             * starting from i = 1 becuase the excel holds headers
+             * starting from i = 1 because the excel holds headers
              */
 
             for (int i = 1; i <= rownum; i++) {
