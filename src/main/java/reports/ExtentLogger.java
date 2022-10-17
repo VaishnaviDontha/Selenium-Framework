@@ -23,14 +23,18 @@ public final class ExtentLogger {
         ReportingManager.getExtenttest().skip(message);
     }
 
-    public static void pass(String message, boolean isScreenshotRequired) throws Exception {
-        if (PropertyUtils.get(ConfigProperties.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotRequired) {
+    public static void pass(String message, boolean isScreenshotRequired) {
+        try {
+            if (PropertyUtils.get(ConfigProperties.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes")&& isScreenshotRequired) {
 
-            ReportingManager.getExtenttest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
-            
-        }
-        else {
-            pass(message);
+                ReportingManager.getExtenttest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
+                
+            }
+            else {
+                pass(message);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
