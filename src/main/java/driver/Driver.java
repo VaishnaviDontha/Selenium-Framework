@@ -3,6 +3,7 @@ package driver;
 import java.util.Objects;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import constants.FrameworkConstants;
 import enums.ConfigProperties;
@@ -14,38 +15,28 @@ public final class Driver {
 
     }
 
-    public static void initDriver() throws Exception {
+    public static void initDriver(String browser) throws Exception {
 
-        if (DriverManager.getDriver() == null) {
+        if (Objects.isNull(DriverManager.getDriver())) {
 
-            // System.setProperty("webdriver.gecko.driver",
-            // FrameworkConstants.getFirefoxdriverpath());
-            // /*
-            // * Using WebDriverManager
-            // */
-
-            // // WebDriverManager.chromedriver().setup();
-            // // WebDriver driver = new ChromeDriver();
-
-            // DriverManager.setDriver(new FirefoxDriver());
-            // DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
-            // //
-            // DriverManager.getDriver().get("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login");
-
-            if (Objects.isNull(DriverManager.getDriver())) {
-
+            if (browser.equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
                 DriverManager.setDriver(new ChromeDriver());
-
-                DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
             }
+
+            else if (browser.equalsIgnoreCase("firefox")) {
+                System.setProperty("webdriver.gecko.driver", FrameworkConstants.getFirefoxdriverpath());
+                DriverManager.setDriver(new FirefoxDriver());
+            }
+
+            DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
         }
 
     }
 
     public static final void quitDriver() {
 
-        if (DriverManager.getDriver() != null) {
+        if (Objects.nonNull(DriverManager.getDriver())) {
             DriverManager.getDriver().quit();
             DriverManager.unload();
         }
