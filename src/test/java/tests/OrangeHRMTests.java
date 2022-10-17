@@ -6,7 +6,10 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import annotations.FrameworkAnnotation;
+import enums.CategoryType;
 import pages.OrangeHRMLoginPage;
+import reports.ReportingManager;
 import utilities.DataProviderUtils;
 
 public final class OrangeHRMTests extends BaseTest {
@@ -15,22 +18,22 @@ public final class OrangeHRMTests extends BaseTest {
 
     }
 
+    @FrameworkAnnotation(author = {"Vaishnavi"}, category = {CategoryType.REGRESSION, CategoryType.SMOKE})
     @Test(dataProvider = "getData", dataProviderClass = DataProviderUtils.class)
     public void loginLogoutTests(Map<String,String> data) throws Exception {
 
         // Reporting.createTest("loginlogouttests"); moving this to Base Test as this
         // doesn't define any test data
+        // Driver.initDriver(data.get("browser"));
 
-        OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
-
-        String title = ohlp.enterUserName(data.get("username"))
-                .enterPassword(data.get("password"))
-                .clickLogin()
-                .clickWelcome()
-                .clickLogout()
-                .getTitle();
-
-        Assertions.assertThat(title).isEqualTo("OrangeHRM");
+        // ReportingManager.getExtenttest().assignAuthor("Vaishnavi").assignAuthor("Author2").assignCategory("Smoke").assignCategory("Regression");
+        
+        String title = new OrangeHRMLoginPage()
+				.enterUserName(data.get("username")).enterPassword(data.get("password")).clickLogin()
+				.clickWelcome().clickLogout()
+				.getTitle();
+		Assertions.assertThat(title)
+			.isEqualTo("OrangeHRM");
 
     }
 
@@ -48,19 +51,15 @@ public final class OrangeHRMTests extends BaseTest {
     }
 
 
-    @Test(dataProvider = "loginTestData")
-    public void newTest(String username, String password) throws Exception {
+    @Test
+    public void newTest(Map<String,String> data) throws Exception {
 
-        OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
-
-        String title = ohlp.enterUserName(username)
-                .enterPassword(password)
-                .clickLogin()
-                .clickWelcome()
-                .clickLogout()
-                .getTitle();
-
-        Assertions.assertThat(title).isEqualTo("OrangeHRM");
+        String title = new OrangeHRMLoginPage()
+				.enterUserName(data.get("username")).enterPassword(data.get("password")).clickLogin()
+				.clickWelcome().clickLogout()
+				.getTitle();
+		Assertions.assertThat(title)
+			.isEqualTo("OrangeHRM");
         
     }
    
