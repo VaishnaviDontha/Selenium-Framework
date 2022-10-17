@@ -9,13 +9,17 @@ public final class FrameworkConstants {
         
     }
 
+    private static final int EXPLICITWAIT = 10;
+    
     private static final String RESOURCESPATH = System.getProperty("user.dir")+ "/src/test/resources" ;
     private static final String CHROMEDRIVERPATH = RESOURCESPATH + "/executables/chromedriver";
     private static final String FIREFOXDRIVERPATH = RESOURCESPATH + "/executables/geckodriver";
-    private static final String CONFIGFILEPATH = RESOURCESPATH + "/config/config.properties"; 
-    private static final int EXPLICITWAIT = 10; 
+    private static final String CONFIGFILEPATH = RESOURCESPATH + "/config/config.properties";   
     private static final String EXCELPATH = RESOURCESPATH + "/excel/testdata.xlsx";
     private static final String EXTENTREPORTPATH = System.getProperty("user.dir")+"/extent-test-output/";
+    private static final String RUNMANAGERDATASHEET = "runmanager";
+    private static final String DATASHEET = "data";
+
     private static String extentReportFilePath = "";
     
 
@@ -57,6 +61,14 @@ public final class FrameworkConstants {
 
     public static String getExcelpath() {
         return EXCELPATH;
+    }
+
+    public static String getRunmanagerdatasheet() {
+        return RUNMANAGERDATASHEET;
+    }
+
+    public static String getDatasheet() {
+        return DATASHEET;
     }
 
 
