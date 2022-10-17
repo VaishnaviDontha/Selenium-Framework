@@ -8,6 +8,7 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+import annotations.FrameworkAnnotation;
 import reports.ExtentLogger;
 import reports.Reporting;
 
@@ -37,6 +38,8 @@ public class ListenerClass implements ITestListener, ISuiteListener {
     public void onTestStart(ITestResult result) {
         // Reporting.createTest(result.getMethod().getMethodName());
         Reporting.createTest(result.getMethod().getDescription());
+        Reporting.addAuthors(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).author());
+        Reporting.addCategories(result.getMethod().getConstructorOrMethod().getMethod().getAnnotation(FrameworkAnnotation.class).category());
     }
 
     @Override
