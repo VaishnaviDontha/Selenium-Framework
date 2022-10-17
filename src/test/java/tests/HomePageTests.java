@@ -9,7 +9,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-import driver.Driver;
 import driver.DriverManager;
 
 import static org.assertj.core.api.Assertions.*;
@@ -31,7 +30,7 @@ public final class HomePageTests extends BaseTest {
     @Test
     public void Test() throws Exception {
 
-        Driver.initDriver();
+
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("The Internet Herokuapp", Keys.ENTER);
         String title = DriverManager.getDriver().getTitle();
         assertTrue(Objects.nonNull(title));
@@ -56,7 +55,6 @@ public final class HomePageTests extends BaseTest {
     @Test
     public void TestsUsingAssertJ() throws Exception {
 
-        Driver.initDriver();
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("The Internet Herokuapp", Keys.ENTER);
         String title = DriverManager.getDriver().getTitle();
 
