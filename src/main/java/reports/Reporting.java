@@ -9,7 +9,9 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 
+import annotations.FrameworkAnnotation;
 import constants.FrameworkConstants;
+import enums.CategoryType;
 
 public class Reporting {
 
@@ -38,7 +40,7 @@ public class Reporting {
             extent.flush();
             
         }
-
+        ReportingManager.unload();
         Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
         
     }
@@ -46,6 +48,21 @@ public class Reporting {
     public static void createTest(String testcasename) {
         ExtentTest test = extent.createTest(testcasename);   
         ReportingManager.setExtenttest(test);
+        
+    }
+
+    public static void addAuthors(String[] authors) {
+        for (String temp : authors) {
+            ReportingManager.getExtenttest().assignAuthor(temp);
+        }
+        
+    }
+
+    public static void addCategories(CategoryType[] categories) {
+        for (CategoryType temp : categories) {
+            ReportingManager.getExtenttest().assignCategory(temp.toString());
+        }
+        
         
     }
 }
