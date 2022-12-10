@@ -1,0 +1,6 @@
+*/target/*
+.idea
+.metadata
+.vscode
+*bin/*
+.apt_generated_tests

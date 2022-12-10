@@ -1,159 +1,133 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-08-04T15:57:30 EDT" name="Suite" finished-at="2022-08-04T15:57:38 EDT" duration-ms="7493">
+  <suite started-at="2022-10-12T15:05:29 EDT" name="Suite" finished-at="2022-10-12T15:05:53 EDT" duration-ms="23349">
     <groups>
     </groups>
-    <test started-at="2022-08-04T15:57:30 EDT" name="switchTabs" finished-at="2022-08-04T15:57:38 EDT" duration-ms="7493">
-      <class name="tests.HomePageTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.HomePageTests@2f112965]" started-at="2022-08-04T15:57:30 EDT" name="setUp" finished-at="2022-08-04T15:57:36 EDT" duration-ms="5408" status="PASS">
+    <test started-at="2022-10-12T15:05:29 EDT" name="Test" finished-at="2022-10-12T15:05:53 EDT" duration-ms="23349">
+      <class name="tests.OrangeHRMTests">
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:31 EDT" name="setUp" finished-at="2022-10-12T15:05:37 EDT" duration-ms="6014" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@39e43310]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="Test()[pri:0, instance:tests.HomePageTests@2f112965]" started-at="2022-08-04T15:57:36 EDT" name="Test" finished-at="2022-08-04T15:57:38 EDT" duration-ms="1916" status="FAIL">
-          <exception class="org.openqa.selenium.StaleElementReferenceException">
+        <test-method signature="loginLogoutTests(java.util.Map)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:37 EDT" name="loginLogoutTests" description="To check login, logout functionality" data-provider="getData" finished-at="2022-10-12T15:05:42 EDT" duration-ms="4770" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fname=test, password=admin123, browser=chrome, testname=loginLogoutTests, execute=yes, username=Admin}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[stale element reference: element is not attached to the page document
-  (Session info: chrome=104.0.5112.79)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'Harishs-MBP.attlocal.net', ip: '2600:1700:aa92:1b30:0:0:0:17%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5', java.version: '18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8e7848975840527403d9dea8947eca3e, sendKeysToElement {id=1896f456-8be5-4706-b5b6-d8708626cf14, value=[Ljava.lang.CharSequence;@69cf7089}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: /var/folders/c1/9j308kts4px...}, goog:chromeOptions: {debuggerAddress: localhost:49640}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on MAC (8e7848975840527403d9dea8947eca3e)] -> name: q]
-Session ID: 8e7848975840527403d9dea8947eca3e]]>
+              <![CDATA[
+expected: "OrangeHRM123"
+ but was: "OrangeHRM"]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: element is not attached to the page document
-  (Session info: chrome=104.0.5112.79)
-For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'Harishs-MBP.attlocal.net', ip: '2600:1700:aa92:1b30:0:0:0:17%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5', java.version: '18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8e7848975840527403d9dea8947eca3e, sendKeysToElement {id=1896f456-8be5-4706-b5b6-d8708626cf14, value=[Ljava.lang.CharSequence;@69cf7089}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: /var/folders/c1/9j308kts4px...}, goog:chromeOptions: {debuggerAddress: localhost:49640}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on MAC (8e7848975840527403d9dea8947eca3e)] -> name: q]
-Session ID: 8e7848975840527403d9dea8947eca3e
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:483)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:113)
-at tests.HomePageTests.Test(HomePageTests.java:18)
+              <![CDATA[java.lang.AssertionError: 
+expected: "OrangeHRM123"
+ but was: "OrangeHRM"
+at tests.OrangeHRMTests.loginLogoutTests(OrangeHRMTests.java:31)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.HomePageTests@2f112965]" started-at="2022-08-04T15:57:38 EDT" name="tearDown" finished-at="2022-08-04T15:57:38 EDT" duration-ms="82" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        </test-method> <!-- loginLogoutTests -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:42 EDT" name="tearDown" finished-at="2022-10-12T15:05:42 EDT" duration-ms="114" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginLogoutTests status=FAILURE method=OrangeHRMTests.loginLogoutTests(java.util.Map)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setUp([Ljava.lang.Object;)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:42 EDT" name="setUp" finished-at="2022-10-12T15:05:48 EDT" duration-ms="5734" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[Ljava.lang.Object;@eb507b9]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="loginLogoutTests(java.util.Map)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:48 EDT" name="loginLogoutTests" description="To check login, logout functionality" data-provider="getData" finished-at="2022-10-12T15:05:52 EDT" duration-ms="3938" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{fname=, password=admin123, browser=firefox, testname=loginLogoutTests, execute=yes, username=Admin}]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Timed out waiting for driver server to stop.
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'Harishs-MBP.attlocal.net', ip: '2600:1700:aa92:1b30:0:0:0:17%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5', java.version: '18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8e7848975840527403d9dea8947eca3e, quit {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: /var/folders/c1/9j308kts4px...}, goog:chromeOptions: {debuggerAddress: localhost:49640}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8e7848975840527403d9dea8947eca3e]]>
+              <![CDATA[
+expected: "OrangeHRM123"
+ but was: "OrangeHRM"]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: Timed out waiting for driver server to stop.
-Build info: version: '4.2.1', revision: 'ac4d0fdd4a'
-System info: host: 'Harishs-MBP.attlocal.net', ip: '2600:1700:aa92:1b30:0:0:0:17%en0', os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '12.5', java.version: '18'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8e7848975840527403d9dea8947eca3e, quit {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 104.0.5112.79, chrome: {chromedriverVersion: 103.0.5060.134 (8ec6fce403b..., userDataDir: /var/folders/c1/9j308kts4px...}, goog:chromeOptions: {debuggerAddress: localhost:49640}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: MAC, proxy: Proxy(), se:cdp: ws://localhost:49640/devtoo..., se:cdpVersion: 104.0.5112.79, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 8e7848975840527403d9dea8947eca3e
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:132)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:606)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:610)
-at org.openqa.selenium.remote.RemoteWebDriver.quit(RemoteWebDriver.java:447)
-at org.openqa.selenium.chromium.ChromiumDriver.quit(ChromiumDriver.java:291)
-at driver.Driver.quitDriver(Driver.java:28)
-at tests.BaseTest.tearDown(BaseTest.java:23)
+              <![CDATA[java.lang.AssertionError: 
+expected: "OrangeHRM123"
+ but was: "OrangeHRM"
+at tests.OrangeHRMTests.loginLogoutTests(OrangeHRMTests.java:31)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 at java.base/java.lang.reflect.Method.invoke(Method.java:577)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
-at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:816)
-at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:785)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:761)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:135)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:673)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:220)
 at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:945)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:193)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
 at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 at java.base/java.lang.Thread.run(Thread.java:833)
-Caused by: java.util.concurrent.ExecutionException: java.io.UncheckedIOException: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at java.base/java.util.concurrent.CompletableFuture.reportGet(CompletableFuture.java:396)
-at java.base/java.util.concurrent.CompletableFuture.get(CompletableFuture.java:2096)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:128)
-... 25 more
-Caused by: java.io.UncheckedIOException: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.makeCall(NettyHttpHandler.java:73)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyHttpHandler.execute(NettyHttpHandler.java:49)
-at org.openqa.selenium.remote.http.AddSeleniumUserAgent.lambda$apply$0(AddSeleniumUserAgent.java:42)
-at org.openqa.selenium.remote.http.Filter.lambda$andFinally$1(Filter.java:56)
-at org.openqa.selenium.remote.http.netty.NettyClient.execute(NettyClient.java:98)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:181)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.lambda$execute$1(DriverCommandExecutor.java:105)
-at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
-... 3 more
-Caused by: org.asynchttpclient.exception.RemotelyClosedException: Remotely closed
-at org.asynchttpclient.exception.RemotelyClosedException.INSTANCE(Unknown Source)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginLogoutTests -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc]" started-at="2022-10-12T15:05:52 EDT" name="tearDown" finished-at="2022-10-12T15:05:53 EDT" duration-ms="709" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginLogoutTests status=FAILURE method=OrangeHRMTests.loginLogoutTests(java.util.Map)[pri:0, instance:tests.OrangeHRMTests@6cdba6dc] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.HomePageTests -->
-      <class name="tests.LoginPageTests">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:tests.LoginPageTests@358ee631]" started-at="2022-08-04T15:57:30 EDT" name="setUp" finished-at="2022-08-04T15:57:36 EDT" duration-ms="5408" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="Test()[pri:0, instance:tests.LoginPageTests@358ee631]" started-at="2022-08-04T15:57:36 EDT" name="Test" finished-at="2022-08-04T15:57:38 EDT" duration-ms="1887" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Test -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginPageTests@358ee631]" started-at="2022-08-04T15:57:38 EDT" name="tearDown" finished-at="2022-08-04T15:57:38 EDT" duration-ms="161" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- tests.LoginPageTests -->
-    </test> <!-- switchTabs -->
+      </class> <!-- tests.OrangeHRMTests -->
+    </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

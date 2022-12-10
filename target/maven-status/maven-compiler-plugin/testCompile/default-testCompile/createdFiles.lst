@@ -1,1 +1,4 @@
+tests/OrangeHRMTests.class
+tests/HomePageTests.class
 tests/LoginPageTests.class
+tests/BaseTest.class
