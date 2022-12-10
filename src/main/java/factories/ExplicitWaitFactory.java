@@ -13,6 +13,11 @@ import enums.WaitStrategy;
 
 public class ExplicitWaitFactory {
 
+    
+
+    private ExplicitWaitFactory() {
+    }
+
     public static WebElement performingExplicitWait(WaitStrategy waitStrategy, By by) {
 
         WebElement element = null;
