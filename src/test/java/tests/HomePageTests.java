@@ -28,7 +28,7 @@ public final class HomePageTests extends BaseTest {
      */
 
     @Test
-    public void Test() throws Exception {
+    public void Test()  {
 
 
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("The Internet Herokuapp", Keys.ENTER);
@@ -53,7 +53,7 @@ public final class HomePageTests extends BaseTest {
     }
 
     @Test
-    public void TestsUsingAssertJ() throws Exception {
+    public void TestsUsingAssertJ()  {
 
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("The Internet Herokuapp", Keys.ENTER);
         String title = DriverManager.getDriver().getTitle();
