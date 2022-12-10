@@ -13,7 +13,7 @@ public final class AmazonDemoTests {
     private AmazonDemoTests(){}
 
     @Test
-    public void amazonTests() throws Exception {
+    public void amazonTests()  {
 
         ReportingManager.getExtenttest().assignAuthor("Vaishnavi").assignAuthor("Author2").assignCategory("Smoke").assignCategory("Regression");
         String title = new AmazonHomePage().clickHamburger().clickElectonics().clickOnSubMenuItem("Headphones").getTitle();
