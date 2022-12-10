@@ -10,7 +10,7 @@ import reports.ExtentLogger;
 
 public class BasePage {
 
-    protected void click(By by, WaitStrategy waitStrategy, String elementname) throws Exception {
+    protected void click(By by, WaitStrategy waitStrategy, String elementname) {
 
         WebElement element = ExplicitWaitFactory.performingExplicitWait(waitStrategy, by);
         element.click();
@@ -18,7 +18,7 @@ public class BasePage {
 
     }
 
-    protected void sendKeys(By by, String value, WaitStrategy waitStrategy, String elementname) throws Exception {
+    protected void sendKeys(By by, String value, WaitStrategy waitStrategy, String elementname) {
 
         WebElement element = ExplicitWaitFactory.performingExplicitWait(waitStrategy, by);
         element.sendKeys(value);
