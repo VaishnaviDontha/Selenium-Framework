@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 
 import enums.WaitStrategy;
+import utilities.DecodeUtils;
 
 public final class OrangeHRMLoginPage extends BasePage{
 
@@ -10,19 +11,19 @@ public final class OrangeHRMLoginPage extends BasePage{
     private final By textboxPassword = By.xpath("//input[@name = 'password' and @type='password']");
     private final By buttonLogin = By.xpath("//button[@type='submit']");
 
-    public OrangeHRMLoginPage enterUserName(String username) throws Exception {
+    public OrangeHRMLoginPage enterUserName(String username) {
 
         sendKeys(textboxUsername, username, WaitStrategy.PRESENCE, "Username");
         return this;
 
     }
 
-    public OrangeHRMLoginPage enterPassword(String password) throws Exception {
-        sendKeys(textboxPassword, password, WaitStrategy.PRESENCE, "Password");
+    public OrangeHRMLoginPage enterPassword(String password)  {
+        sendKeys(textboxPassword, DecodeUtils.getDecodedString(password), WaitStrategy.PRESENCE, "Password");
         return this;
     }
 
-    public OrangeHRMHomePage clickLogin() throws Exception {
+    public OrangeHRMHomePage clickLogin()  {
         click(buttonLogin, WaitStrategy.CLICKABLE, "Login Button");
         return new OrangeHRMHomePage();
 
