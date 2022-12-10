@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import annotations.FrameworkAnnotation;
 import enums.CategoryType;
 import pages.OrangeHRMLoginPage;
-import reports.ReportingManager;
+
 import utilities.DataProviderUtils;
 
 public final class OrangeHRMTests extends BaseTest {
@@ -52,7 +52,7 @@ public final class OrangeHRMTests extends BaseTest {
 
 
     @Test
-    public void newTest(Map<String,String> data) throws Exception {
+    public void newTest(Map<String,String> data)  {
 
         String title = new OrangeHRMLoginPage()
 				.enterUserName(data.get("username")).enterPassword(data.get("password")).clickLogin()
