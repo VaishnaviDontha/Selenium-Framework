@@ -12,19 +12,21 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import constants.FrameworkConstants;
+import exceptions.FrameworkException;
+import exceptions.InvalidExcelPathException;
+import exceptions.WorkbookIOException;
 
 public final class ExcelUtils {
 
     private ExcelUtils() {
     }
 
-    public static List<Map<String, String>> getTestDetails(String sheetname) {
+    public static List<Map<String, String>> getTestDetails(String sheetname) { 
 
-        FileInputStream fis = null;
         List<Map<String, String>> list = null;
 
-        try {
-            fis = new FileInputStream(FrameworkConstants.getExcelpath());
+        try (FileInputStream fis = new FileInputStream(FrameworkConstants.getExcelpath())) {
+
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
 
             XSSFSheet sheet = workbook.getSheet(sheetname);
@@ -56,14 +58,14 @@ public final class ExcelUtils {
                 workbook.close();
             }
         } catch (FileNotFoundException e) {
+            // StackTraceElement[] a = e.getStackTrace();
+            // a[0] = new StackTraceElement("utilities.ExcelUtils", "getTestDetails", "ExcelUtils.java", 25);
+            // e.setStackTrace(a);
 
-            e.printStackTrace();
+            throw new InvalidExcelPathException("Excel file trying to read isn't found");
         } catch (IOException e) {
-
-            e.printStackTrace();
-        }
-
+           throw new WorkbookIOException("Workbook isn't closed");
+        } 
         return list;
     }
-
 }
