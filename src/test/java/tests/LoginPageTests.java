@@ -13,14 +13,14 @@ public final class LoginPageTests extends BaseTest {
     }
 
     @Test
-    public void Test() throws Exception {
+    public void Test() {
 
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("Selenium Automation", Keys.ENTER);
 
     }
 
     @Test
-    public void Test2() throws Exception {
+    public void Test2() {
 
         DriverManager.getDriver().findElement(By.name("q")).sendKeys("Selenium Automation", Keys.ENTER);
 
