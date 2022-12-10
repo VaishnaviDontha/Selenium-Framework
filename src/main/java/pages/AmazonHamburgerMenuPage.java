@@ -22,11 +22,11 @@ public final class AmazonHamburgerMenuPage extends BasePage{
     private String linkElectronics = "//div[text()='Electronics']/parent :: a";
     private String linkSubMenu = "//ul[@class='hmenu hmenu-visible hmenu-translateX']//a[@class='hmenu-item'][normalize-space()='%s']";
 
-    public AmazonHamburgerMenuPage clickElectonics() throws Exception {
+    public AmazonHamburgerMenuPage clickElectonics()  {
         click(By.xpath(linkElectronics), WaitStrategy.CLICKABLE, "Electonics");
         return this;
     }
-    public AmazonHeadphonesPage clickOnSubMenuItem(String menutext) throws Exception {
+    public AmazonHeadphonesPage clickOnSubMenuItem(String menutext)  {
 
         String newXpath = DynamicXpathUtils.getXpath(linkSubMenu, menutext);
         click(By.xpath(newXpath),WaitStrategy.CLICKABLE,menutext);
