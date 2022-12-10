@@ -1,6 +1,7 @@
 package utilities;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +10,7 @@ import java.util.Properties;
 
 import constants.FrameworkConstants;
 import enums.ConfigProperties;
+import exceptions.InvalidPropertyFilePathException;
 
 public final class PropertyUtils {
 
@@ -28,10 +30,10 @@ public final class PropertyUtils {
 				CONFIGMAP.put(String.valueOf(entry.getKey()), String.valueOf(entry.getValue()).trim());
 			}
 	
-		} catch (IOException e) {
+		} catch(IOException e){
 			e.printStackTrace();
 			System.exit(0);
-		} 
+		}
 
 
 	}
@@ -44,9 +46,9 @@ public final class PropertyUtils {
 	 */
 
 	 
-	public static String get(ConfigProperties key) throws Exception  {
+	public static String get(ConfigProperties key)  {
 		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
-			throw new Exception("Property name " + key + " is not found. Please check config.properties");
+			throw new InvalidPropertyFilePathException("Property name " + key + " is not found. Please check config.properties");
 		}
 		return CONFIGMAP.get(key.name().toLowerCase());
 
